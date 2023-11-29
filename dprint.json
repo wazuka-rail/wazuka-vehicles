@@ -1,0 +1,20 @@
+{
+  "lineWidth": 80,
+  "typescript": {
+  },
+  "json": {
+  },
+  "includes": ["**/*.{ts,tsx,js,jsx,cjs,mjs,json}"],
+  "excludes": [
+    ".git",
+    "**/node_modules",
+    "**/*-lock.json",
+    "/out",
+    "/.next",
+    "/build"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.84.0.wasm",
+    "https://plugins.dprint.dev/json-0.17.1.wasm"
+  ]
+}
