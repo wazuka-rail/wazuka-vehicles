@@ -1,6 +1,6 @@
-import { basePath } from "@/../next.config";
+import nextConfig from "@/../next.config";
 
-const BASE_PATH = basePath ? basePath : "";
+const BASE_PATH = nextConfig.basePath ?? "";
 
 const path = (path: string) => {
   if (path.startsWith("/")) {
