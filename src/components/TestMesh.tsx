@@ -81,7 +81,7 @@ const uvs = new Float32Array([
   +L / 2 + H, +W / 2,
 ].map(v => v / 25.6 + 0.5));
 
-const TestMesh: React.FC<TestMeshProps> = (props) => {
+const TestMesh = (props: TestMeshProps) => {
   const meshRef = useRef<Mesh>(null!);
   useHelper(meshRef, VertexNormalsHelper, 1, 0xffffff);
   const diffMap = useTexture(path("/test/test_diff_lod1.png"));
@@ -95,29 +95,19 @@ const TestMesh: React.FC<TestMeshProps> = (props) => {
         <bufferGeometry attach="geometry">
           <bufferAttribute
             attach="index"
-            array={indices}
-            count={indices.length}
-            itemSize={1}
+            args={[indices, 1]}
           />
           <bufferAttribute
             attach="attributes-position"
-            array={positions}
-            count={positions.length / 3}
-            itemSize={3}
+            args={[positions, 3]}
           />
           <bufferAttribute
             attach="attributes-normal"
-            array={normals}
-            count={normals.length / 3}
-            itemSize={3}
-            normalized={true}
+            args={[normals, 3, true]}
           />
           <bufferAttribute
             attach="attributes-uv"
-            array={uvs}
-            count={uvs.length / 2}
-            itemSize={2}
-            normalized={true}
+            args={[uvs, 2, true]}
           />
         </bufferGeometry>
         <meshStandardMaterial

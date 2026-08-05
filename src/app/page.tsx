@@ -4,10 +4,9 @@ import path from "@/lib/path";
 import { OrbitControls } from "@react-three/drei";
 import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { NextPage } from "next";
 
-const App: NextPage = () => (
-  <div style={{ width: "100vw", height: "100vh" }}>
+const App = () => (
+  <div className="w-screen h-screen">
     <Canvas
       camera={{ fov: 75, near: 0.1, far: 100, position: [0, 1.5, 20] }}
     >
